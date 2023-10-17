@@ -1,20 +1,22 @@
 <x-layout title="Novo Livro">
     <form action="" method="post">
-        <label for="titulo">Título:</label>
-        <input type="text" id="titulo" name="titulo"><br><br>
+        <div class="mb-3">
+            <label for="titulo" class = "form-label">Título:</label>
+            <input type="text" id="titulo" name="titulo" class="form-control">
 
-        <label for="autor">Autor:</label>
-        <input type="text" id="autor" name="autor"><br><br>
+            <label for="autor" form-label>Autor:</label>
+            <input type="text" id="autor" name="autor" class="form-control">
 
-        <label for="classificacao">Classificação (de 1 a 5):</label>
-        <input type="number" id="classificacao" name="classificacao" min="1" max="5"><br><br>
+            <label for="classificacao" form-label>Classificação (de 1 a 5):</label>
+            <input type="number" id="classificacao" name="classificacao" min="1" max="5"class="form-control">
 
-        <label for="resenha">Resenha:</label>
-        <textarea id="resenha" name="resenha" rows="4" cols="50"></textarea><br><br>
+            <label for="resenha" form-label>Resenha:</label>
+            <textarea id="resenha" name="resenha" rows="4" cols="50" class="form-control"></textarea>
 
-        <label for="data_adicao">Data de Adição:</label>
-        <input type="date" id="data_adicao" name="data_adicao"><br><br>
+            <label for="data_adicao"form-label >Data de Adição:</label>
+            <input type="date" id="data_adicao" name="data_adicao" class="form-control">
 
-        <input type="submit" value="Salvar">
+        </div>
+            <input type="submit" class="btn btn-primary" value="Salvar">
     </form>
 </x-layout>
