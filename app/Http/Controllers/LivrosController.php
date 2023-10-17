@@ -15,4 +15,8 @@ class LivrosController extends Controller
         ];
         return view('livros.index')->with('livros', $livros);
     }
+    public function create()
+    {
+        return view('livros.create');
+    }
 }

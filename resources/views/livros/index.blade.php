@@ -1,9 +1,10 @@
 <x-layout title="Livros">
-<ul>
-    @foreach($livros as $livro)
-    <li>{{$livro}}</li>
-    @endforeach
-</ul>
-</body>
-</html>
+    <a href="/livros/adicionar">Adicionar Livro</a>
+    <ul>
+        @foreach($livros as $livro)
+        <li>{{$livro}}</li>
+        @endforeach
+    </ul>
+    </body>
+    </html>
 </x-layout> 
