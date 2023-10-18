@@ -1,5 +1,6 @@
 <x-layout title="Novo Livro">
-    <form action="" method="post">
+    <form action="/livros/salvar" method="post">
+        @csrf
         <div class="mb-3">
             <label for="titulo" class = "form-label">Título:</label>
             <input type="text" id="titulo" name="titulo" class="form-control">
