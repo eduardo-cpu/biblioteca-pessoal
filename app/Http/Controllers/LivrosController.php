@@ -19,4 +19,8 @@ class LivrosController extends Controller
     {
         return view('livros.create');
     }
+    public function edit()
+    {
+        return view('livros.edit');
+    }
 }

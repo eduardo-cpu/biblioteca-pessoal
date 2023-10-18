@@ -19,3 +19,4 @@ Route::get('/home', function () {
 
 Route::get('/livros',[\App\Http\Controllers\LivrosController::class, 'index']);
 Route::get('/livros/adicionar',[\App\Http\Controllers\LivrosController::class, 'create']);
+Route::get('/livros/editar',[\App\Http\Controllers\LivrosController::class, 'edit']);
