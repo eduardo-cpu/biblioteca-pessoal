@@ -1,5 +1,6 @@
 <?php
-use App\Htpp\Controllers\LivrosController;
+
+use App\Http\Controllers\LivrosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
-    return view('welcome');
+Route::get('/', function () {
+    return redirect('/livros');
 });
 
-Route::get('/livros',[\App\Http\Controllers\LivrosController::class, 'index']);
-Route::get('/livros/adicionar',[\App\Http\Controllers\LivrosController::class, 'create']);
-Route::get('/livros/editar',[\App\Http\Controllers\LivrosController::class, 'edit']);
-Route::post('/livros/salvar',[\App\Http\Controllers\LivrosController::class, 'store']);
+Route::resource('/livros', LivrosController::class)
+->except(['show']);
