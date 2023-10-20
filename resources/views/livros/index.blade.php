@@ -11,17 +11,16 @@
         @foreach($livros as $livro)
         <li class="list-group-item d-flex justify-content-between align-items-center">
             {{$livro->titulo}}
-            <span class= “d-flex”>
-                <a href="{{ route('livros.edit', $livro->id) }}" class="btn btn-primary btn-sm">Editar</a>
-                
-            <form action="{{ route('livros.destroy', $livro->id) }}" method="post">
+            
+            <form action="{{ route('livros.destroy', $livro->id) }}" method="post" class="ms-2">
                 @csrf
                 @method('DELETE')
+                <a href="{{ route('livros.edit', $livro->id) }}" class="btn btn-primary btn-sm">Editar</a>
             
                 <button class="btn btn-danger btn-sm">
                     X
                 </button>
-                <a href="/livros/{{$livro->titulo}}/detalhes" class="btn btn-secondary mx-2">Detalhes</a>
+                <a href="{{ route('livros.detalhes', $livro->id) }}" class="btn btn-secondary mx-2">Detalhes</a>
             </form>
         </li>
         @endforeach

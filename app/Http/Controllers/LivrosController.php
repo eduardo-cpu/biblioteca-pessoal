@@ -5,48 +5,59 @@ namespace App\Http\Controllers;
 use App\Models\Livro;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-class LivrosController extends Controller
+
+class livrosController extends Controller
 {
     public function index(Request $request)
     {
-       $livros = Livro::query()->orderBy('titulo')->get();
-       $mensagemSucesso = $request->session()->get(key:'mensagem.sucesso');
+        $series = Livro::query()->orderBy('titulo')->get();
+        $mensagemSucesso = session('mensagem.sucesso');
 
-        return view('livros.index')->with('livros', $livros)
+        return view('livros.index')->with('livros', $series)
             ->with('mensagemSucesso', $mensagemSucesso);
     }
+
     public function create()
     {
         return view('livros.create');
-        
-    }
-    public function edit(Livro $livro)
-    {
-        return view('livros.edit')->with('livro',$livro);
     }
 
     public function store(Request $request)
     {
-       $livro = Livro::create($request->all());
+        $livro = Livro::create($request->all());
+
         return to_route('livros.index')
-            ->with('mensagem.sucesso',"Livro {$livro->titulo} adicionado com sucesso");
+            ->with('mensagem.sucesso', "Livro '{$livro->titulo}' adicionada com sucesso");
     }
 
     public function destroy(Livro $livro)
     {
         $livro->delete();
-  
+
         return to_route('livros.index')
-            ->with('mensagem.sucesso', "Livro {$livro->titulo} removido com sucesso");
+            ->with('mensagem.sucesso', "Livro '{$livro->titulo}' removida com sucesso");
+    }
+
+    public function edit(Livro $livro)
+    {
+        
+        return view('livros.edit')->with('livro', $livro);
+    }
+
+    public function update(Livro $livro, Request $request)
+    {
+        $livro->fill($request->all());
+        $livro->save();
+
+        return to_route('livros.index')
+            ->with('mensagem.sucesso', "Livro '{$livro->titulo}' atualizada com sucesso");
+    }
+    public function detalhes($id) 
+    {
+        $livro = Livro::find($id); 
+        return view('livros.details', ['livro' => $livro]);
     }
     
-    public function update(Livro $livros, Request $request)
-    {
-        $livros->titulo = $request->titulo;
-        $livros->save();
-
-        return to_route('livros.index')
-            ->with('mensagem.sucesso', "Livro {$livros->titulo} atualizado com sucesso");
-    }
-
+    
+    
 }

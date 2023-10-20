@@ -18,5 +18,10 @@ Route::get('/', function () {
     return redirect('/livros');
 });
 
+
+
 Route::resource('/livros', LivrosController::class)
-->except(['show']);
+->only(['index','destroy','create','store','edit','update','detalhes']);
+
+Route::get('/livros/detalhes/{livro}', [LivrosController::class, 'detalhes'])
+->name('livros.detalhes');
