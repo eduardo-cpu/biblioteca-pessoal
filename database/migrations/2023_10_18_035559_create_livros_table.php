@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('autor')->nullable();
             $table->unsignedTinyInteger('classificacao')->nullable()->default(0);
             $table->text('resenha')->nullable();
+            $table->date('data_adicao')->nullable();
             $table->timestamps();
         });
     }

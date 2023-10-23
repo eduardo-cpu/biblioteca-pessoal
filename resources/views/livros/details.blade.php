@@ -7,12 +7,13 @@
                     <div class="card-body">
                         <h2 class="text-center">Título: {{ $livro->titulo }}</h2>
                         <div class="text-center mt-3">
+                        @csrf
                             <img src="$livro->imagem_url" alt="Imagem do Livro" style="max-width: 100%; height: auto;">
                         </div>
                         <p class="text-center">Autor: {{ $livro->autor }}</p>
                         <p class="text-center">Classificação: {{ $livro->classificacao }}</p>
                         <p class="text-center">Resenha: {{ $livro->resenha }}</p>
-                        <p class="text-center">Data de Adição: {{ $livro->created_at }}</p>
+                        <p class="text-center">Data de Adição: {{ $livro->data_adicao }}</p>
                     </div>
                 </div>
             </div>
