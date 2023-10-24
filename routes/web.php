@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LivrosController;
+use App\Http\Controllers\AmazonController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,9 @@ Route::get('/', function () {
 
 Route::resource('/livros', LivrosController::class)
     ->only(['index','destroy','create','store','edit','update']);
-
+    
 Route::get('/livros/{livro}/detalhes', [LivrosController::class, 'detalhes'])
     ->name('livros.detalhes');
+
+
+    

@@ -12,6 +12,16 @@
                @isset($titulo)value="{{ $titulo }}"@endisset>
     </div>
 
+    <!-- Adicione um campo para o URL da imagem abaixo do título -->
+    <div class="mb-3">
+        <label for="url_imagem" class="form-label">URL da Imagem:</label>
+        <input type="text" 
+               id="url_imagem" 
+               name="url_imagem" 
+               class="form-control"
+               @isset($url_imagem)value="{{$url_imagem}}"@endisset>
+    </div>
+
     <div class="mb-3">
         <label for="autor" class="form-label">Autor:</label>
         <input type="text" 

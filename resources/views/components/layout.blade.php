@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
+<div class="bottom-space">
 <div class="container">
-    <h1>{{$title}}</h1>
-
-    {{  $slot }}
+    <head>
+        <h1 class="d-inline">{{$title}}</h1>
+    {{ $slot }}
+</head>
 </div>
 </body>
 </html>
