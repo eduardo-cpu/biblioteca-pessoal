@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
 <body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <x-layout title="Biblioteca Pessoal">
-        <div class="container">
-            <div class="toolbar">
-                <a href="{{ route('livros.create') }}" class="btn btn-dark mb-2">Adicionar Livro</a>
-            </div>
-
+        <div class="container" style="margin: 15px 70px">
+            <a href="{{ route('livros.create') }}" class="btn btn-dark mb-2">Adicionar Livro</a>
             @isset($mensagemSucesso)
             <div class="alert alert-success">
                 {{ $mensagemSucesso }}
@@ -19,20 +17,18 @@
                 @endphp
                 @foreach($livros as $livro)
                     <div class="col-md-3 mb-3">
-                        <div class="card">
-                        <img src="{{$livro->url_imagem}}" alt="Imagem do Livro">
+                    <div class="card-footer" style="display: flex; justify-content: space-between;">
+                        <div class="card shadow" style="width: 70%;">
+                        <img src="{{$livro->url_imagem}}" alt="Imagem do Livro" style="max-width: 100%; height: 300px;">
                             <div class="card-body">
-                                <h5 class="card-title">{{$livro->titulo}}</h5>
-                                <p>Autor: {{$livro->autor}}</p>
-                                <p>Classificação: {{$livro->classificacao}}</p>
-                                <a href="{{ route('livros.detalhes', $livro->id) }}" class="btn btn-secondary btn-sm">Detalhes</a>
-                            </div>
-                            <div class="card-footer" style="display: flex; justify-content: space-between;">
-                                <a href="{{ route('livros.edit', $livro->id) }}" class="btn btn-primary btn-sm">Editar</a>
-                                <form action="{{ route('livros.destroy', $livro->id) }}" method="post">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger btn-sm">Deletar</button>
+                                <h5 class="card-title" style="font-size: 12.3px;">{{$livro->titulo}}</h5>
+                                <p style="font-size: 12px;">Autor: {{$livro->autor}}</p>
+                                <p style="font-size: 12px;">Classificação: {{$livro->classificacao}}</p>
+                                <a href="{{ route('livros.detalhes', $livro->id) }}" class="btn btn-secondary btn-sm">
+                                    <i class="fa fa-search"></i>
+                                    <i class="fa fa-file"></i>
+                                </a> 
+                                </div>
                                 </form>
                             </div>
                         </div>

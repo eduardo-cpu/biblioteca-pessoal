@@ -1,8 +1,10 @@
 <form action="{{$action}}" method="post">
+<a href="{{ route('livros.index') }}">Voltar para a Home</a>
     @csrf
     @isset($titulo)
         @method('PUT')
     @endisset
+    <div class="container" style="margin: 30px">
     <div class="mb-3">
         <label for="titulo" class="form-label">Título:</label>
         <input type="text" 
@@ -12,7 +14,6 @@
                @isset($titulo)value="{{ $titulo }}"@endisset>
     </div>
 
-    <!-- Adicione um campo para o URL da imagem abaixo do título -->
     <div class="mb-3">
         <label for="url_imagem" class="form-label">URL da Imagem:</label>
         <input type="text" 
@@ -60,6 +61,6 @@
                class="form-control"
                @isset($data_adicao)value="{{$data_adicao}}"@endisset>
     </div>
-
     <button type="submit" class="btn btn-primary" value="Salvar">Salvar</button>
 </form>
+</div>
