@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <x-layout title="Biblioteca Pessoal">
         <div class="container" style="margin: 15px 70px">
-            <a href="{{ route('livros.create') }}" class="btn btn-dark mb-2">Adicionar Livro</a>
             @isset($mensagemSucesso)
             <div class="alert alert-success">
                 {{ $mensagemSucesso }}

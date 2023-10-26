@@ -20,7 +20,10 @@
     <header>
         <!-- Barra preta com o título em branco -->
         <div class="navbar">
-            <h1 style="font-size: 24px; padding: 5px 20px;">{{$title}}</h1>
+        <a href="{{ route('livros.index') }}" style="text-decoration: none; color: inherit;">
+            <h1 style="font-size: 24px; padding: 5px 20px; cursor: pointer;">{{$title}}</h1>
+        </a>
+        <a href="{{ route('livros.create') }}" class="btn btn-dark mb-2">Adicionar Livro</a>
         </div>
     </header>
     <main>
