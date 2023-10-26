@@ -25,10 +25,10 @@
                 </div>
 
                 <div class="mb-3 shadow p-3 rounded">
-                    <label for "autor" class="form-label">Autor:</label>
+                    <label for="autor" class="form-label">Autor:</label>
                     <input type="text" 
                         id="autor" 
-                        name "autor" 
+                        name="autor" 
                         class="form-control"
                         @isset($autor) value="{{ $autor }}" @endisset>
                 </div>

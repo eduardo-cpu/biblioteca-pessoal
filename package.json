@@ -1,10 +1,13 @@
 {
+    "homepage": "https://eduardo-cpu.github.io/biblioteca-pessoal/livros",
     "private": true,
     "type": "module",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "mix": "mix"
+        "mix": "mix",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
     },
     "devDependencies": {
         "axios": "^1.1.2",
@@ -16,6 +19,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
-        "bootstrap": "^5.3.2"
+        "bootstrap": "^5.3.2",
+        "gh-pages": "^6.0.0"
     }
 }
